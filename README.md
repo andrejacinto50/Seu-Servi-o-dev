@@ -1,33 +1,33 @@
-# Projeto React - Seu Serviço Dev
+Seu Serviço Dev - Landing Page React
+O Seu Serviço Dev é uma landing page moderna e responsiva, desenvolvida com React.js, criada para apresentar serviços de desenvolvimento web com design atraente, usabilidade e alta performance. Este projeto é ideal para profissionais que desejam demonstrar suas habilidades em front-end moderno, com integrações externas e foco na experiência do usuário.
 
-O projeto Seu Serviço Dev é uma landing page desenvolvida com React.js, voltada para apresentar os serviços de desenvolvimento web de forma moderna, responsiva e funcional. A aplicação destaca:
+Confira o site em funcionamento:
+🌐 https://seu-servi-o-dev.vercel.app/
 
-Carrossel de imagens com react-slick e slick-carousel;
+Principais funcionalidades e tecnologias utilizadas:
+Carrossel de imagens implementado com react-slick e slick-carousel para uma navegação visual suave;
 
-Estilização moderna com Tailwind CSS e CSS customizado;
+Estilização moderna usando Tailwind CSS combinada com CSS customizado para flexibilidade e design responsivo;
 
-Formulário com validação e máscara de telefone, usando inputmask, react-input-mask e react-phone-number-input;
+Formulário de contato com validação robusta e máscara para telefone, utilizando inputmask, react-input-mask e react-phone-number-input;
 
-Envio de e-mails automatizado via EmailJS, utilizando o pacote @emailjs/browser;
+Envio automatizado de e-mails através do serviço EmailJS, com o pacote @emailjs/browser para integração direta no front-end;
 
-Navegação com React Router DOM;
+Navegação dinâmica com React Router DOM, permitindo uma experiência SPA fluida;
 
-Ícones modernos com react-icons e lucide-react;
+Ícones modernos com as bibliotecas react-icons e lucide-react para maior apelo visual;
 
-Componentização de seções como Menu, Sobre e Home.
+Componentização eficiente para seções como Menu, Sobre, Home, Serviços e Consultoria, garantindo código organizado e reutilizável;
 
-Além disso, o layout inclui integração com WhatsApp, seção de serviços e consultoria, e foco em performance e usabilidade, sendo ideal para mostrar expertise em front-end moderno com React e integrações externas.
+Integração com WhatsApp para contato direto e rápido;
 
-## Como rodar o projeto:
+Foco em performance, responsividade e usabilidade.
 
-1. Clone o repositório.
-2. Instale as dependências:
-   ```
-   npm install
-   ```
-3. Inicie o servidor de desenvolvimento:
-   ```
-   npm start
-   ```
-npm
-Acesse o site em `http://localhost:3000/`.
+Como executar o projeto localmente
+Clone este repositório;
+
+Instale as dependências com npm install;
+
+Inicie o servidor de desenvolvimento com npm start;
+
+Acesse http://localhost:3000/ no navegador.
