@@ -1,6 +1,22 @@
 # Projeto React - Seu Serviço Dev
 
-Este é um projeto React básico que simula a estrutura do site "Seu Serviço Dev" com carrossel de imagens e interatividade.
+O projeto Seu Serviço Dev é uma landing page desenvolvida com React.js, voltada para apresentar os serviços de desenvolvimento web de forma moderna, responsiva e funcional. A aplicação destaca:
+
+Carrossel de imagens com react-slick e slick-carousel;
+
+Estilização moderna com Tailwind CSS e CSS customizado;
+
+Formulário com validação e máscara de telefone, usando inputmask, react-input-mask e react-phone-number-input;
+
+Envio de e-mails automatizado via EmailJS, utilizando o pacote @emailjs/browser;
+
+Navegação com React Router DOM;
+
+Ícones modernos com react-icons e lucide-react;
+
+Componentização de seções como Menu, Sobre e Home.
+
+Além disso, o layout inclui integração com WhatsApp, seção de serviços e consultoria, e foco em performance e usabilidade, sendo ideal para mostrar expertise em front-end moderno com React e integrações externas.
 
 ## Como rodar o projeto:
 
