@@ -188,7 +188,6 @@ export default function App() {
   const [otherCountry, setOtherCountry] = useState('');
   const [ddd, setDdd] = useState('');
   const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
 
   const [name, setName] = useState('');
   const [isPhoneEnabled, setIsPhoneEnabled] = useState(false);
