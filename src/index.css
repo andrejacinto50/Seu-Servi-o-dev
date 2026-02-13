@@ -299,7 +299,7 @@ p {
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 25px;
-  color: #f15a24;
+  color:  #d4af37; /* dourado */
 }
 
 .contact-form {
@@ -478,4 +478,230 @@ p {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ============================= */
+/*  RESPONSIVIDADE   */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Container padrão */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HERO / TOPO */
+.topo {
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Textos principais */
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* Botões */
+.btn,
+.btn-form {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Centraliza botões */
+.btn,
+.btn-form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CARROSSEL */
+.carousel {
+  height: auto;
+  padding: 20px 0;
+}
+
+.carousel-image {
+  max-height: 250px;
+}
+
+/* SERVICES */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  flex-direction: row;
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .topo {
+    margin-bottom: 30px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
+  .btn,
+  .btn-form {
+    width: 100%;
+  }
+
+  .carousel-image {
+    max-height: 200px;
+  }
+
+  .contact-container {
+    padding: 140px 16px 40px;
+  }
+
+  .contact-left,
+  .contact-right {
+    max-width: 100%;
+  }
+
+  .contact-left h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-left p {
+    text-align: center;
+  }
+
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+ @media (max-width: 768px) {
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+}
+
+/* =============================== */
+/* CONTATO - LAYOUT PREMIUM */
+/* =============================== */
+
+.contact-section {
+  background: #0b0b0b;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* ESQUERDA */
+.contact-left {
+  flex: 1;
+}
+
+.contact-left h2 {
+  font-size: 3rem;
+  color: #d4af37; /* dourado */
+}
+
+.contact-left p {
+  color: #ccc;
+  font-size: 1.1rem;
+  max-width: 420px;
+}
+
+/* DIREITA */
+.contact-right {
+  flex: 1;
+}
+
+/* FORM */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: #111;
+  border: 1px solid #d4af37;
+  color: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #000;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* =============================== */
+/* MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-left p {
+    margin: 0 auto 20px;
+  }
+
+}
+
+/* REMOVER LARANJA DA WAVE */
+.wave-svg path {
+  fill: #0b0b0b;
+}
+
+/* GARANTIR FUNDO PRETO */
+.contact-section {
+  background: #0b0b0b;
 }
