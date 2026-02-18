@@ -50,9 +50,23 @@ function Home({
         <div><img src="promocao.png" alt="Banner 3" className="carousel-image" /></div>
       </Slider>
 
-      <a className="btn btn-whatsapp" href="https://wa.me/5548991087702" target="_blank" rel="noopener noreferrer">
-        Falar no WhatsApp
-      </a>
+     <a
+  href="https://wa.me/5548991087702"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    backgroundColor: "#25D366",
+    color: "#ffffff",
+    padding: "12px 25px",
+    borderRadius: "5px",
+    textDecoration: "none",
+    display: "inline-block",
+    fontSize: "1em",
+     marginTop: "60px"
+  }}
+>
+  Falar no WhatsApp
+</a>
 
       <section className="about-section">
         <h2>O que fazemos?</h2>

@@ -377,3 +377,13 @@ nav a::after,
 nav a::before {
   background: none !important;
 }
+
+.btn-whatsapp {
+  background-color: #25D366; /* verde WhatsApp */
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d; /* verde um pouco mais escuro */
+  transform: scale(1.05);
+}
