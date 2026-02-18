@@ -140,6 +140,8 @@ p {
 .contact-section {
   background: #0b0b0b;
   position: relative;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .wave-svg path {
@@ -265,4 +267,113 @@ p {
     font-size: 2.2rem;
   }
 
+}
+
+/* REMOVE ESPAÇO BRANCO ACIMA DA SEÇÃO DE CONTATO */
+.contact-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* SOBE O FUNDO PRETO */
+.contact-container {
+  padding-top: 40px !important;
+}
+
+/* GARANTE QUE BODY NÃO TENHA MARGEM */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin-top: 0 !important;
+}
+
+/* ============================
+   CORREÇÃO MOBILE - CONTATO
+============================ */
+
+@media (max-width: 768px) {
+
+  /* Onda menor */
+  .wave-svg {
+    height: 60px !important;
+  }
+
+  /* Remove espaço gigante acima */
+  .contact-section {
+    margin-top: -40px;
+    padding-top: 0 !important;
+  }
+
+  /* Ajusta container */
+  .contact-container {
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Centralização melhor */
+  .contact-left,
+  .contact-right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-left h2 {
+    font-size: 2rem;
+  }
+
+  .contact-left p {
+    font-size: 1rem;
+  }
+
+}
+
+/* =========================
+   MENU LINKS
+========================= */
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Hover */
+nav a:hover {
+  color: #d4af37;
+}
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.mobile-menu {
+  background: #0d0d0d;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  display: block;
+  padding: 12px 0;
+  font-size: 18px;
+}
+
+.mobile-menu a:hover {
+  color: #d4af37;
+}
+
+/* REMOVE ROSA DOS LINKS DO MENU */
+nav a,
+nav a:visited,
+nav a:hover,
+nav a:focus,
+nav a:active {
+  color: #000000 !important;
+}
+
+/* REMOVE QUALQUER BACKGROUND ROSA */
+nav a::after,
+nav a::before {
+  background: none !important;
 }

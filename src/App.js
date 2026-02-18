@@ -50,7 +50,7 @@ function Home({
         <div><img src="promocao.png" alt="Banner 3" className="carousel-image" /></div>
       </Slider>
 
-      <a className="btn" href="https://wa.me/5548991087702" target="_blank" rel="noopener noreferrer">
+      <a className="btn btn-whatsapp" href="https://wa.me/5548991087702" target="_blank" rel="noopener noreferrer">
         Falar no WhatsApp
       </a>
 
@@ -80,11 +80,30 @@ function Home({
         </div>
       </section>
 
-
-      <section id="contato" ref={contatoRef} className="contact-section">
-  <svg className="wave-svg" viewBox="0 0 1440 320">
-    <path fill="#f15a24" fillOpacity="1" d="M0,160L60,154.7C120,149,240,139,360,122.7C480,107,600,85,720,101.3C840,117,960,171,1080,181.3C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-  </svg>
+<section
+  id="contato"
+  ref={contatoRef}
+  className="contact-section"
+  style={{
+    padding: 0,
+    margin: 0,
+    overflow: "hidden"
+  }}
+>
+<svg
+  className="wave-svg"
+  viewBox="0 0 1440 320"
+  style={{
+    display: "block",
+    height: "90px"
+  }}
+>
+  <path
+    fill="#0b0b0b"
+    fillOpacity="1"
+    d="M0,160L60,154.7C120,149,240,139,360,122.7C480,107,600,85,720,101.3C840,117,960,171,1080,181.3C1200,192,1320,160,1380,144L1440,128L1440,0L0,0Z"
+  />
+</svg>
 
   <div className="contact-container">
     <div className="contact-left">
