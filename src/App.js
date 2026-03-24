@@ -41,7 +41,8 @@ function Home({
       <div className="topo">
         <img src="serviçodev.png" alt="Seu Serviço Dev" className="logo" />
         <h1>Seu Serviço Dev</h1>
-        <p>Desenvolvemos sites e sistemas digitais sob medida, com foco em resultados e experiência do usuário.</p>
+        <p>Criamos sites profissionais para empresas e comércios locais que querem atrair mais clientes.
+Sites modernos, rápidos e feitos para destacar seu negócio na internet.</p>
       </div>
 
       <Slider {...settings}>
@@ -65,7 +66,7 @@ function Home({
      marginTop: "60px"
   }}
 >
-  Falar no WhatsApp
+  Solicitar orçamento no WhatsApp
 </a>
 
       <section className="about-section">
