@@ -14,6 +14,8 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: #0b0b0b;
   color: #ffffff;
   text-align: center;
@@ -22,12 +24,16 @@ body {
   line-height: 1.6;
 }
 
+section {
+  margin-top: 0;
+}
+
 /* ========================= */
 /* TOPO */
 /* ========================= */
 
 .topo {
-  padding: 60px 20px;
+  padding: 50px 20px 35px;
 }
 
 .logo {
@@ -36,33 +42,15 @@ body {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
+  margin-bottom: 14px;
 }
 
-p {
-  font-size: 1rem;
-  max-width: 700px;
+.topo p {
+  font-size: 1.08rem;
+  max-width: 760px;
   margin: 0 auto;
-}
-
-/* ========================= */
-/* BOTÕES */
-/* ========================= */
-
-.btn {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 14px 36px;
-  background: linear-gradient(135deg,#d4af37,#b8962e);
-  color: #000;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
+  color: #f1f1f1;
 }
 
 /* ========================= */
@@ -71,8 +59,63 @@ p {
 
 .carousel-image {
   width: 100%;
-  max-height: 320px;
+  max-height: 480px;
   object-fit: contain;
+  border-radius: 10px;
+}
+
+/* ========================= */
+/* LINKS DOS EXEMPLOS */
+/* ========================= */
+
+.links-exemplos {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.links-exemplos a {
+  background: transparent;
+  color: #d4af37;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #d4af37;
+  transition: 0.3s ease;
+}
+
+.links-exemplos a:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* ========================= */
+/* WHATSAPP FIXO */
+/* ========================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #000;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  background: #1ebe5b;
 }
 
 /* ========================= */
@@ -84,155 +127,95 @@ p {
   background: #111;
 }
 
+.about-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.06rem;
+  color: #f0f0f0;
+}
+
 /* ========================= */
 /* SERVIÇOS */
 /* ========================= */
 
 .services-section {
-  padding: 80px 20px;
+  padding: 85px 20px;
   background: #f5f5f5;
 }
 
 .services-section h2 {
   color: #000;
   margin-bottom: 50px;
-  font-size: 2.4rem;
+  font-size: 2.5rem;
 }
 
 .services-grid {
   display: flex;
-  gap: 40px;
+  gap: 32px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .service-item {
   background: #fff;
-  width: 260px;
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: 0.3s;
+  width: 290px;
+  padding: 30px 22px;
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease;
 }
 
 .service-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .service-icon {
-  width: 70px;
-  margin-bottom: 20px;
+  width: 68px;
+  margin-bottom: 18px;
 }
 
 .service-item h3 {
   color: #d4af37;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  font-size: 1.7rem;
 }
 
 .service-item p {
   color: #555;
+  font-size: 1rem;
+  max-width: 100%;
 }
 
 /* ========================= */
-/* CONTATO */
+/* MENU */
 /* ========================= */
 
-.contact-section {
-  background: #0b0b0b;
-  position: relative;
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+
+
+nav a::after,
+nav a::before {
+  background: none !important;
 }
 
-.wave-svg path {
-  fill: #0b0b0b;
+.mobile-menu {
+  background: #0d0d0d;
 }
 
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 140px 20px 80px;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  justify-content: space-between;
+.mobile-menu a {
+  color: #ffffff !important;
+  display: block;
+  padding: 12px 0;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-.contact-left {
-  flex: 1;
-  text-align: left;
-}
-
-.contact-left h2 {
-  font-size: 3rem;
-  color: #d4af37;
-}
-
-.contact-left p {
-  color: #ccc;
-  margin-top: 20px;
-  max-width: 420px;
-}
-
-.contact-right {
-  flex: 1;
-}
-
-/* FORM */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #d4af37;
-  background: #111;
-  color: #fff;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #aaa;
-}
-
-.contact-form button {
-  padding: 14px;
-  background: linear-gradient(135deg,#d4af37,#b8962e);
-  border: none;
-  border-radius: 10px;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  transform: scale(1.03);
-}
-
-.country-container {
-  display: flex;
-  gap: 10px;
-}
-
-.input-phone {
-  width: 100%;
-}
-
-/* MENSAGENS */
-
-.error-message {
-  color: #ff4d4d;
-  font-size: 0.9rem;
-}
-
-.success-message {
-  color: #4caf50;
+.mobile-menu a:hover {
+  color: #d4af37 !important;
 }
 
 /* ========================= */
@@ -240,14 +223,12 @@ p {
 /* ========================= */
 
 @media (max-width: 900px) {
-
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
+  h1 {
+    font-size: 2.2rem;
   }
 
-  .contact-left {
-    text-align: center;
+  .topo p {
+    font-size: 1rem;
   }
 
   .services-grid {
@@ -256,134 +237,137 @@ p {
   }
 
   .carousel-image {
-    max-height: 220px;
+    max-height: 280px;
+  }
+
+  .about-section h2,
+  .services-section h2 {
+    font-size: 2rem;
+  }
+
+  .service-item {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topo {
+    padding: 40px 16px 28px;
+  }
+
+  .logo {
+    width: 130px;
   }
 
   h1 {
     font-size: 2rem;
   }
 
-  .contact-left h2 {
-    font-size: 2.2rem;
+  .carousel-image {
+    max-height: 220px;
   }
 
+  .links-exemplos {
+    gap: 10px;
+  }
+
+  .links-exemplos a {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .about-section,
+  .services-section {
+    padding: 65px 16px;
+  }
+
+  .whatsapp-float {
+    bottom: 16px;
+    right: 16px;
+    padding: 11px 16px;
+    font-size: 14px;
+  }
 }
 
-/* REMOVE ESPAÇO BRANCO ACIMA DA SEÇÃO DE CONTATO */
-.contact-section {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+.cta-strip {
+  max-width: 900px;
+  margin: 35px auto 0;
+  padding: 18px 20px;
+  background: #111;
+  border: 1px solid #d4af37;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-/* SOBE O FUNDO PRETO */
-.contact-container {
-  padding-top: 40px !important;
-}
-
-/* GARANTE QUE BODY NÃO TENHA MARGEM */
-body {
+.cta-strip p {
   margin: 0;
-  padding: 0;
+  color: #fff;
+  font-size: 1rem;
+  max-width: none;
 }
 
-section {
-  margin-top: 0 !important;
+.cta-strip a {
+  background: #25d366;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 10px;
+  transition: 0.3s ease;
 }
 
-/* ============================
-   CORREÇÃO MOBILE - CONTATO
-============================ */
+.cta-strip a:hover {
+  background: #1ebe5b;
+}
 
-@media (max-width: 768px) {
-
-  /* Onda menor */
-  .wave-svg {
-    height: 60px !important;
-  }
-
-  /* Remove espaço gigante acima */
-  .contact-section {
-    margin-top: -40px;
-    padding-top: 0 !important;
-  }
-
-  /* Ajusta container */
-  .contact-container {
-    padding-top: 80px !important;
-    padding-bottom: 40px !important;
-  }
-
-  /* Centralização melhor */
-  .contact-left,
-  .contact-right {
-    max-width: 100%;
+@media (max-width: 700px) {
+  .cta-strip {
+    flex-direction: column;
     text-align: center;
   }
-
-  .contact-left h2 {
-    font-size: 2rem;
-  }
-
-  .contact-left p {
-    font-size: 1rem;
-  }
-
 }
 
-/* =========================
-   MENU LINKS
-========================= */
+.hero-buttons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
 
-nav a {
-  color: #ffffff;
+.hero-buttons button,
+.hero-buttons a {
+  padding: 12px 20px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
 }
 
-/* Hover */
-nav a:hover {
+.hero-buttons button {
+  border: 1px solid #d4af37;
   color: #d4af37;
+  background: transparent;
 }
 
-/* =========================
-   MENU MOBILE
-========================= */
-
-.mobile-menu {
-  background: #0d0d0d;
+.hero-buttons button:hover {
+  background: #d4af37;
+  color: #000;
 }
 
-.mobile-menu a {
-  color: #ffffff;
-  display: block;
-  padding: 12px 0;
-  font-size: 18px;
+.hero-buttons a {
+  background: #25d366;
+  color: #000;
 }
 
-.mobile-menu a:hover {
-  color: #d4af37;
-}
-
-/* REMOVE ROSA DOS LINKS DO MENU */
-nav a,
-nav a:visited,
-nav a:hover,
-nav a:focus,
-nav a:active {
-  color: #000000 !important;
-}
-
-/* REMOVE QUALQUER BACKGROUND ROSA */
-nav a::after,
-nav a::before {
-  background: none !important;
-}
-
-.btn-whatsapp {
-  background-color: #25D366; /* verde WhatsApp */
-  color: #ffffff;
-}
-
-.btn-whatsapp:hover {
-  background-color: #1ebe5d; /* verde um pouco mais escuro */
-  transform: scale(1.05);
+.hero-buttons a:hover {
+  background: #1ebe5b;
 }

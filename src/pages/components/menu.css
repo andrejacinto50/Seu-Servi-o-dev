@@ -1,38 +1,100 @@
-/* src/components/Menu.css */
 .menu {
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #ddd;
-    display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 11, 11, 0.96);
+  backdrop-filter: blur(10px);
+  padding: 14px 30px;
+  border-bottom: 1px solid #1f1f1f;
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu-link {
+  all: unset;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 4px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+  color: #d4af37;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+/* ativo */
+.menu-link.active {
+  color: #d4af37;
+}
+
+.menu-link.active::after {
+  width: 100%;
+}
+
+/* botão WhatsApp */
+.menu-whatsapp {
+  all: unset;
+  cursor: pointer;
+  background: #25d366;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.menu-whatsapp:hover {
+  background: #1ebe5b;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .menu {
+    padding: 12px 15px;
+  }
+
+  .menu ul {
+    gap: 18px;
+    flex-wrap: wrap;
     justify-content: center;
   }
-  
-  .menu ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    padding: 0;
-    margin: 0;
+
+  .menu-link,
+  .menu-whatsapp {
+    font-size: 14px;
   }
-  
-  .menu li {
-    list-style: none;
-  }
-  
-  .menu li a,
-  .menu li button {
-    text-decoration: none;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #333;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .menu li a:hover,
-  .menu li button:hover {
-    color: #ff69b4; /* rosa */
-  }
-  
+}
