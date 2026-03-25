@@ -110,31 +110,31 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
           </div>
 
           <div>
-            <button
-              type="button"
-              onClick={() => {}}
-              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+            <a
+              href="COLE_AQUI_O_LINK_DO_RESTAURANTE"
+              target="_blank"
+              rel="noreferrer"
             >
               <img
                 src="restaurante.png"
                 alt="Site para restaurante"
                 className="carousel-image"
               />
-            </button>
+            </a>
           </div>
 
           <div>
-            <button
-              type="button"
-              onClick={() => {}}
-              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+            <a
+              href="COLE_AQUI_O_LINK_DA_LOJA"
+              target="_blank"
+              rel="noreferrer"
             >
               <img
                 src="loja.png"
                 alt="Site para loja"
                 className="carousel-image"
               />
-            </button>
+            </a>
           </div>
         </Slider>
 
@@ -147,21 +147,21 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
             Ver site da barbearia
           </a>
 
-          <button
-            type="button"
-            onClick={() => {}}
-            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+          <a
+            href="COLE_AQUI_O_LINK_DO_RESTAURANTE"
+            target="_blank"
+            rel="noreferrer"
           >
             Ver site do restaurante
-          </button>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => {}}
-            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+          <a
+            href="COLE_AQUI_O_LINK_DA_LOJA"
+            target="_blank"
+            rel="noreferrer"
           >
             Ver site da loja
-          </button>
+          </a>
         </div>
       </section>
 
