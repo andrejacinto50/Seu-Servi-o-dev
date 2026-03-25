@@ -110,23 +110,31 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
           </div>
 
           <div>
-            <a href="#" onClick={(e) => e.preventDefault()}>
+            <button
+              type="button"
+              onClick={() => {}}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+            >
               <img
                 src="restaurante.png"
                 alt="Site para restaurante"
                 className="carousel-image"
               />
-            </a>
+            </button>
           </div>
 
           <div>
-            <a href="#" onClick={(e) => e.preventDefault()}>
+            <button
+              type="button"
+              onClick={() => {}}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+            >
               <img
                 src="loja.png"
                 alt="Site para loja"
                 className="carousel-image"
               />
-            </a>
+            </button>
           </div>
         </Slider>
 
@@ -139,13 +147,21 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
             Ver site da barbearia
           </a>
 
-          <a href="#" onClick={(e) => e.preventDefault()}>
+          <button
+            type="button"
+            onClick={() => {}}
+            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+          >
             Ver site do restaurante
-          </a>
+          </button>
 
-          <a href="#" onClick={(e) => e.preventDefault()}>
+          <button
+            type="button"
+            onClick={() => {}}
+            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+          >
             Ver site da loja
-          </a>
+          </button>
         </div>
       </section>
 
