@@ -111,7 +111,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
 
           <div>
             <a
-              href="COLE_AQUI_O_LINK_DO_RESTAURANTE"
+              href="https://restaurantemultipage.netlify.app/"
               target="_blank"
               rel="noreferrer"
             >
@@ -148,7 +148,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
           </a>
 
           <a
-            href="COLE_AQUI_O_LINK_DO_RESTAURANTE"
+            href="https://restaurantemultipage.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
