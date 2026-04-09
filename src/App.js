@@ -62,13 +62,12 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
   return (
     <>
       <section className="topo" ref={homeRef} id="home">
-        <h1>Seu Serviço Dev</h1>
+        <h1>AJ Digital</h1>
         <p>
-          Criamos sites profissionais para empresas e comércios locais que querem
-          atrair mais clientes.
+        Criamos sites profissionais para empresas e comércios que querem atrair mais clientes.
+
           <br />
-          Sites modernos, rápidos e feitos para destacar seu negócio na internet.
-        </p>
+Sites modernos, rápidos e pensados para destacar seu negócio na internet.        </p>
 
         <div className="hero-buttons">
           <button
@@ -125,7 +124,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
 
           <div>
             <a
-              href="COLE_AQUI_O_LINK_DA_LOJA"
+              href="https://monarchstore.netlify.app/"
               target="_blank"
               rel="noreferrer"
             >
@@ -156,7 +155,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
           </a>
 
           <a
-            href="COLE_AQUI_O_LINK_DA_LOJA"
+            href="https://monarchstore.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
@@ -177,10 +176,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
       <section className="about-section">
         <h2>O que fazemos?</h2>
         <p>
-          Desenvolvemos soluções sob medida para cada negócio, criando sites
-          rápidos, intuitivos e pensados para oferecer a melhor experiência ao
-          cliente. Nosso foco é facilitar o contato, melhorar a apresentação da
-          empresa e gerar mais oportunidades no digital.
+         Na AJ Digital, desenvolvemos soluções sob medida para cada negócio, criando sites rápidos, intuitivos e pensados para oferecer a melhor experiência ao cliente. Nosso foco é fortalecer a presença digital da sua empresa, facilitar o contato e gerar mais oportunidades de crescimento.
         </p>
       </section>
 
@@ -207,8 +203,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
             />
             <h3>Criação de Sites Profissionais</h3>
             <p>
-              Sites modernos, rápidos e que funcionam perfeitamente no celular,
-              pensados para apresentar sua empresa da melhor forma.
+Sites modernos, rápidos e responsivos que geram mais oportunidades.
             </p>
           </div>
 
@@ -220,8 +215,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
             />
             <h3>Integração com WhatsApp</h3>
             <p>
-              Receba contatos diretos dos clientes e facilite o atendimento com um
-              site conectado ao WhatsApp.
+             Receba contatos diretos dos clientes pelo WhatsApp do seu site.
             </p>
           </div>
 
@@ -233,8 +227,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
             />
             <h3>Soluções Personalizadas</h3>
             <p>
-              Sistemas e soluções adaptadas ao seu negócio para melhorar processos
-              e resultados.
+            Sob medida para melhorar processos e gerar mais resultados.
             </p>
           </div>
         </div>

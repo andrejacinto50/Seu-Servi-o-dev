@@ -5,24 +5,23 @@ const Sobre = () => {
     <div style={styles.page}>
       <div style={styles.container}>
         <section style={styles.hero}>
-          <span style={styles.badge}>Seu Serviço Dev</span>
+          <span style={styles.badge}>AJ Digital</span>
           <h1 style={styles.title}>Sites profissionais para empresas que querem crescer no digital.</h1>
           <p style={styles.description}>
-            Criamos sites rápidos, modernos e pensados para fazer seu negócio crescer na internet.
-          </p>
+Criamos projetos modernos, rápidos e pensados para gerar resultados e destacar seu negócio na internet.          </p>
         </section>
 
         <section style={styles.section}>
           <div style={styles.contentBox}>
             <h2 style={styles.subTitle}>Quem está por trás</h2>
             <p style={styles.text}>
-              Meu nome é <strong>André Filipe Jacinto</strong>, desenvolvedor focado em criar sites que ajudam empresas a se posicionarem melhor na internet e conquistarem mais clientes.
+              Meu nome é <strong>André Filipe Jacinto</strong>, desenvolvedor focado em criar sites que ajudam empresas a se posicionarem melhor no digital e conquistarem mais clientes.
 
-Meu objetivo é simples: entregar um site profissional, rápido e que realmente gere resultado para o seu negócio.
+Meu objetivo é entregar projetos profissionais, rápidos e que realmente gerem resultados.
             </p>
             <p style={styles.text}>
-              O objetivo da <strong>Seu Serviço Dev</strong> é entregar projetos com visual profissional,
-              boa performance e uma estrutura pensada para gerar confiança no cliente desde o primeiro acesso.
+              A  <strong>AJ Digital</strong> nasce com o propósito de desenvolver soluções com visual profissional,
+              alta performance e uma estrutura pensada para gerar confiança desde o primeiro acesso.
             </p>
           </div>
         </section>
@@ -34,14 +33,14 @@ Meu objetivo é simples: entregar um site profissional, rápido e que realmente 
             <div style={styles.card}>
               <h3 style={styles.cardTitle}>Sites Profissionais</h3>
               <p style={styles.cardText}>
-                Sites modernos, responsivos e pensados para destacar sua empresa e facilitar o contato com clientes.
+Sites modernos, rápidos e responsivos que geram mais oportunidades.
               </p>
             </div>
 
             <div style={styles.card}>
               <h3 style={styles.cardTitle}>Soluções Personalizadas</h3>
               <p style={styles.cardText}>
-                Projetos sob medida para organizar processos, melhorar a apresentação do negócio e trazer mais eficiência.
+            Sob medida para melhorar processos e gerar mais resultados.
               </p>
             </div>
 
