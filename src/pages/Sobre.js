@@ -1,201 +1,109 @@
 import React from 'react';
+import './sobre.css';
 
 const Sobre = () => {
   return (
-    <div style={styles.page}>
-      <div style={styles.container}>
-        <section style={styles.hero}>
-          <span style={styles.badge}>AJ Digital</span>
-          <h1 style={styles.title}>Sites profissionais para empresas que querem crescer no digital.</h1>
-          <p style={styles.description}>
-Criamos projetos modernos, rápidos e pensados para gerar resultados e destacar seu negócio na internet.          </p>
+    <main className="sobre-page">
+      <div className="sobre-container">
+        <section className="sobre-hero">
+          <span className="sobre-badge">AJ Digital</span>
+          <h1>
+            Criamos sites profissionais para empresas que querem crescer com
+            mais presença, confiança e resultado no digital.
+          </h1>
+          <p>
+            Desenvolvemos projetos modernos, rápidos e estratégicos, pensados
+            para valorizar sua marca, transmitir profissionalismo e transformar
+            visitas em oportunidades reais.
+          </p>
         </section>
 
-        <section style={styles.section}>
-          <div style={styles.contentBox}>
-            <h2 style={styles.subTitle}>Quem está por trás</h2>
-            <p style={styles.text}>
-              Meu nome é <strong>André Filipe Jacinto</strong>, desenvolvedor focado em criar sites que ajudam empresas a se posicionarem melhor no digital e conquistarem mais clientes.
+        <section className="sobre-section">
+          <div className="sobre-content-box">
+            <span className="sobre-kicker">Quem está por trás</span>
+            <h2>Uma marca construída para entregar presença digital de verdade.</h2>
 
-Meu objetivo é entregar projetos profissionais, rápidos e que realmente gerem resultados.
+            <p>
+              Meu nome é <strong>André Filipe Jacinto</strong>, desenvolvedor
+              focado em criar sites que ajudam empresas a se posicionarem melhor
+              no digital e conquistarem mais clientes.
             </p>
-            <p style={styles.text}>
-              A  <strong>AJ Digital</strong> nasce com o propósito de desenvolver soluções com visual profissional,
-              alta performance e uma estrutura pensada para gerar confiança desde o primeiro acesso.
+
+            <p>
+              Meu objetivo é entregar projetos profissionais, rápidos e com uma
+              estrutura pensada para gerar resultado, fortalecer a imagem da
+              empresa e facilitar o contato com novos clientes.
+            </p>
+
+            <p>
+              A <strong>AJ Digital</strong> nasce com o propósito de desenvolver
+              soluções com visual profissional, alta performance e uma
+              experiência que transmite confiança desde o primeiro acesso.
             </p>
           </div>
         </section>
 
-        <section style={styles.section}>
-          <h2 style={styles.subTitleCenter}>O que entregamos</h2>
+        <section className="sobre-section">
+          <div className="sobre-section-heading">
+            <span className="sobre-kicker">O que entregamos</span>
+            <h2>Soluções criadas para destacar empresas no ambiente digital</h2>
+            <p>
+              Mais do que presença online, desenvolvemos estruturas que ajudam a
+              valorizar a marca, melhorar a comunicação e gerar mais
+              oportunidades.
+            </p>
+          </div>
 
-          <div style={styles.grid}>
-            <div style={styles.card}>
-              <h3 style={styles.cardTitle}>Sites Profissionais</h3>
-              <p style={styles.cardText}>
-Sites modernos, rápidos e responsivos que geram mais oportunidades.
+          <div className="sobre-grid">
+            <article className="sobre-card">
+              <h3>Sites Profissionais</h3>
+              <p>
+                Sites modernos, rápidos e responsivos, criados para transmitir
+                mais confiança e gerar mais oportunidades para sua empresa.
               </p>
-            </div>
+            </article>
 
-            <div style={styles.card}>
-              <h3 style={styles.cardTitle}>Soluções Personalizadas</h3>
-              <p style={styles.cardText}>
-            Sob medida para melhorar processos e gerar mais resultados.
+            <article className="sobre-card">
+              <h3>Soluções Personalizadas</h3>
+              <p>
+                Projetos sob medida para atender a necessidade de cada negócio,
+                com foco em estrutura, funcionalidade e resultado.
               </p>
-            </div>
+            </article>
 
-            <div style={styles.card}>
-              <h3 style={styles.cardTitle}>Presença Digital</h3>
-              <p style={styles.cardText}>
-                Estrutura visual e estratégica para fortalecer sua marca e transmitir mais confiança no ambiente online.
+            <article className="sobre-card">
+              <h3>Presença Digital</h3>
+              <p>
+                Uma apresentação visual e estratégica para fortalecer sua marca
+                e mostrar mais profissionalismo no ambiente online.
               </p>
-            </div>
+            </article>
           </div>
         </section>
 
-        <section style={styles.ctaSection}>
-          <div style={styles.ctaBox}>
-            <h2 style={styles.ctaTitle}>Seu negócio merece uma presença online mais profissional.</h2>
-            <p style={styles.ctaText}>
-              Um site bem feito transmite mais confiança, valoriza sua empresa e ajuda a transformar visitantes em clientes.
+        <section className="sobre-cta-section">
+          <div className="sobre-cta-box">
+            <span className="sobre-kicker">Vamos construir sua presença digital</span>
+            <h2>Seu negócio merece um site com aparência profissional e mais força para vender.</h2>
+            <p>
+              Um site bem feito transmite mais confiança, valoriza sua empresa e
+              ajuda a transformar visitantes em clientes com muito mais
+              consistência.
             </p>
 
             <a
               href="https://wa.me/5548991087702"
               target="_blank"
               rel="noreferrer"
-              style={styles.ctaButton}
+              className="sobre-cta-button"
             >
               Falar no WhatsApp
             </a>
           </div>
         </section>
       </div>
-    </div>
+    </main>
   );
-};
-
-const styles = {
-  page: {
-    minHeight: '100vh',
-    background: '#0b0b0b',
-    color: '#ffffff',
-    padding: '60px 20px 90px',
-    fontFamily: 'Arial, sans-serif',
-  },
-  container: {
-    maxWidth: '1100px',
-    margin: '0 auto',
-  },
-  hero: {
-    textAlign: 'center',
-    marginBottom: '60px',
-  },
-  badge: {
-    display: 'inline-block',
-    padding: '8px 14px',
-    border: '1px solid #d4af37',
-    borderRadius: '999px',
-    color: '#d4af37',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-  },
-  title: {
-    fontSize: '3rem',
-    lineHeight: 1.2,
-    marginBottom: '18px',
-    maxWidth: '900px',
-    marginInline: 'auto',
-  },
-  description: {
-    fontSize: '1.1rem',
-    color: '#e0e0e0',
-    maxWidth: '760px',
-    margin: '0 auto',
-    lineHeight: 1.7,
-  },
-  section: {
-    marginBottom: '55px',
-  },
-  contentBox: {
-    background: '#141414',
-    border: '1px solid #232323',
-    borderRadius: '18px',
-    padding: '32px',
-    boxShadow: '0 14px 30px rgba(0,0,0,0.18)',
-  },
-  subTitle: {
-    fontSize: '2rem',
-    marginBottom: '18px',
-    color: '#d4af37',
-  },
-  subTitleCenter: {
-    fontSize: '2rem',
-    marginBottom: '28px',
-    color: '#d4af37',
-    textAlign: 'center',
-  },
-  text: {
-    fontSize: '1.05rem',
-    lineHeight: 1.8,
-    color: '#f0f0f0',
-    marginBottom: '14px',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-    gap: '22px',
-  },
-  card: {
-    background: '#161616',
-    border: '1px solid #242424',
-    borderRadius: '18px',
-    padding: '28px 22px',
-    boxShadow: '0 12px 28px rgba(0,0,0,0.16)',
-  },
-  cardTitle: {
-    fontSize: '1.35rem',
-    color: '#d4af37',
-    marginBottom: '12px',
-  },
-  cardText: {
-    fontSize: '1rem',
-    color: '#dddddd',
-    lineHeight: 1.7,
-  },
-  ctaSection: {
-    marginTop: '20px',
-  },
-  ctaBox: {
-    background: 'linear-gradient(135deg, #111, #1a1a1a)',
-    border: '1px solid #2a2a2a',
-    borderRadius: '20px',
-    padding: '38px 24px',
-    textAlign: 'center',
-  },
-  ctaTitle: {
-    fontSize: '2rem',
-    marginBottom: '16px',
-    color: '#ffffff',
-  },
-  ctaText: {
-    maxWidth: '760px',
-    margin: '0 auto 24px',
-    fontSize: '1.05rem',
-    color: '#d9d9d9',
-    lineHeight: 1.7,
-  },
-  ctaButton: {
-    display: 'inline-block',
-    background: '#25d366',
-    color: '#000',
-    padding: '14px 24px',
-    borderRadius: '10px',
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    fontSize: '1rem',
-  },
 };
 
 export default Sobre;

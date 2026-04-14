@@ -30,6 +30,7 @@ const Menu = () => {
           type="button"
           className="menu-logo"
           onClick={() => goToSection('home')}
+          aria-label="Ir para o início"
         >
           <img src={logo} alt="AJ Digital" />
         </button>
@@ -83,7 +84,7 @@ const Menu = () => {
           rel="noreferrer"
           className="menu-whatsapp"
         >
-          WhatsApp
+          Falar no WhatsApp
         </a>
       </div>
     </nav>

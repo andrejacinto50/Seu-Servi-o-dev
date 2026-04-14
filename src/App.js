@@ -15,13 +15,65 @@ import Sobre from './pages/Sobre';
 function Home({ homeRef, servicosRef, portfolioRef }) {
   const location = useLocation();
 
+  const portfolioItems = [
+    {
+      title: 'Barbearia Monarch',
+      description:
+        'Um site com presença forte, visual premium e estrutura pensada para valorizar a marca e facilitar o agendamento.',
+      image: 'barbearia.png',
+      alt: 'Site para barbearia',
+      link: 'https://barbeariamonarch.netlify.app/',
+    },
+    {
+      title: 'Restaurante Multipage',
+      description:
+        'Uma apresentação moderna e estratégica para restaurantes que querem transmitir qualidade e atrair mais clientes.',
+      image: 'restaurante.png',
+      alt: 'Site para restaurante',
+      link: 'https://restaurantemultipage.netlify.app/',
+    },
+    {
+      title: 'Monarch Store',
+      description:
+        'Um modelo de loja com identidade marcante, visual sofisticado e uma estrutura feita para destacar produtos com mais impacto.',
+      image: 'loja.png',
+      alt: 'Site para loja',
+      link: 'https://monarchstore.netlify.app/',
+    },
+  ];
+
+  const services = [
+    {
+      icon: 'iconesite.png',
+      alt: 'Criação de Sites',
+      title: 'Sites Profissionais',
+      description:
+        'Projetos modernos, rápidos e responsivos, criados para fortalecer sua presença digital e gerar mais oportunidades.',
+    },
+    {
+      icon: 'iconesistemas.png',
+      alt: 'Integração com WhatsApp',
+      title: 'Integração com WhatsApp',
+      description:
+        'Facilite o contato com seus clientes e transforme visitas em conversas diretas pelo WhatsApp da sua empresa.',
+    },
+    {
+      icon: 'iconeconsultoria.png',
+      alt: 'Soluções Personalizadas',
+      title: 'Soluções Sob Medida',
+      description:
+        'Cada negócio tem sua necessidade. Por isso, desenvolvemos soluções personalizadas para melhorar processos e gerar resultado.',
+    },
+  ];
+
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
+    autoplaySpeed: 4500,
     arrows: true,
     customPaging: () => (
       <div
@@ -62,12 +114,15 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
   return (
     <>
       <section className="topo" ref={homeRef} id="home">
-        <h1>AJ Digital</h1>
-        <p>
-        Criamos sites profissionais para empresas e comércios que querem atrair mais clientes.
+        <span className="hero-kicker">AJ Digital</span>
 
-          <br />
-Sites modernos, rápidos e pensados para destacar seu negócio na internet.        </p>
+        <h1>Sites profissionais para negócios que querem crescer no digital.</h1>
+
+        <p>
+          Criamos experiências digitais com visual forte, carregamento rápido e
+          estrutura pensada para transformar visitas em oportunidades reais para
+          sua empresa.
+        </p>
 
         <div className="hero-buttons">
           <button
@@ -93,74 +148,42 @@ Sites modernos, rápidos e pensados para destacar seu negócio na internet.     
       </section>
 
       <section className="portfolio-section" ref={portfolioRef} id="portfolio">
+        <div className="section-heading">
+          <span className="section-kicker">Portfólio</span>
+          <h2>Modelos criados para encantar, posicionar e vender melhor.</h2>
+          <p>
+            Cada projeto é desenvolvido com foco em apresentação profissional,
+            percepção de valor e facilidade de contato com o cliente.
+          </p>
+        </div>
+
         <Slider {...settings}>
-          <div>
-            <a
-              href="https://barbeariamonarch.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="barbearia.png"
-                alt="Site para barbearia"
-                className="carousel-image"
-              />
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="https://restaurantemultipage.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="restaurante.png"
-                alt="Site para restaurante"
-                className="carousel-image"
-              />
-            </a>
-          </div>
-
-          <div>
-            <a
-              href="https://monarchstore.netlify.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="loja.png"
-                alt="Site para loja"
-                className="carousel-image"
-              />
-            </a>
-          </div>
+          {portfolioItems.map((item) => (
+            <div key={item.title}>
+              <a href={item.link} target="_blank" rel="noreferrer">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="carousel-image"
+                />
+              </a>
+            </div>
+          ))}
         </Slider>
 
-        <div className="links-exemplos">
-          <a
-            href="https://barbeariamonarch.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver site da barbearia
-          </a>
-
-          <a
-            href="https://restaurantemultipage.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver site do restaurante
-          </a>
-
-          <a
-            href="https://monarchstore.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver site da loja
-          </a>
+        <div className="portfolio-cards">
+          {portfolioItems.map((item) => (
+            <div className="portfolio-card" key={item.title}>
+              <div className="portfolio-card-content">
+                <span className="portfolio-label">Projeto em destaque</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  Ver site
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -174,64 +197,60 @@ Sites modernos, rápidos e pensados para destacar seu negócio na internet.     
       </a>
 
       <section className="about-section">
-        <h2>O que fazemos?</h2>
+        <span className="section-kicker">Posicionamento</span>
+        <h2>Mais do que um site, uma ferramenta de crescimento.</h2>
         <p>
-         Na AJ Digital, desenvolvemos soluções sob medida para cada negócio, criando sites rápidos, intuitivos e pensados para oferecer a melhor experiência ao cliente. Nosso foco é fortalecer a presença digital da sua empresa, facilitar o contato e gerar mais oportunidades de crescimento.
+          Na AJ Digital, cada projeto é pensado para valorizar a imagem da sua
+          empresa, facilitar o contato com o cliente e criar uma presença
+          digital que transmite mais confiança, profissionalismo e resultado.
         </p>
       </section>
 
-      <div className="cta-strip">
-        <p>Quer um site profissional para o seu negócio?</p>
-        <a
-          href="https://wa.me/5548991087702"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Solicitar orçamento
-        </a>
-      </div>
-
       <section id="servicos" ref={servicosRef} className="services-section">
-        <h2>Nossos Serviços</h2>
+        <div className="section-heading">
+          <span className="section-kicker">Serviços</span>
+          <h2>O que a AJ Digital pode fazer pelo seu negócio</h2>
+          <p>
+            Soluções digitais criadas para empresas que querem se destacar,
+            vender mais e transmitir um posicionamento mais profissional na
+            internet.
+          </p>
+        </div>
 
         <div className="services-grid">
-          <div className="service-item">
-            <img
-              src="iconesite.png"
-              alt="Criação de Sites"
-              className="service-icon"
-            />
-            <h3>Criação de Sites Profissionais</h3>
-            <p>
-Sites modernos, rápidos e responsivos que geram mais oportunidades.
-            </p>
-          </div>
-
-          <div className="service-item">
-            <img
-              src="iconesistemas.png"
-              alt="Integração com WhatsApp"
-              className="service-icon"
-            />
-            <h3>Integração com WhatsApp</h3>
-            <p>
-             Receba contatos diretos dos clientes pelo WhatsApp do seu site.
-            </p>
-          </div>
-
-          <div className="service-item">
-            <img
-              src="iconeconsultoria.png"
-              alt="Soluções Personalizadas"
-              className="service-icon"
-            />
-            <h3>Soluções Personalizadas</h3>
-            <p>
-            Sob medida para melhorar processos e gerar mais resultados.
-            </p>
-          </div>
+          {services.map((service) => (
+            <div className="service-item" key={service.title}>
+              <img
+                src={service.icon}
+                alt={service.alt}
+                className="service-icon"
+              />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
         </div>
       </section>
+
+      <div className="cta-strip">
+        <div className="cta-strip-content">
+          <div>
+            <span className="section-kicker">Vamos tirar sua ideia do papel</span>
+            <p>
+              Seu negócio está pronto para ter um site com visual profissional e
+              mais poder de conversão?
+            </p>
+          </div>
+
+          <a
+            href="https://wa.me/5548991087702"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Solicitar orçamento
+          </a>
+        </div>
+      </div>
     </>
   );
 }

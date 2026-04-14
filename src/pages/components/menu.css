@@ -2,20 +2,21 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(11, 11, 11, 0.96);
-  backdrop-filter: blur(10px);
-  padding: 14px 30px;
-  border-bottom: 1px solid #1f1f1f;
+  padding: 16px 24px;
+  background: rgba(8, 8, 8, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
 }
 
 .menu-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 34px;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .menu-logo {
@@ -29,7 +30,7 @@
 }
 
 .menu-logo img {
-  height: 56px;
+  height: 54px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -54,25 +55,28 @@
   color: #ffffff;
   font-size: 15px;
   font-weight: 600;
-  padding: 6px 4px;
+  padding: 6px 2px;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
   white-space: nowrap;
+  opacity: 0.92;
 }
 
 .menu-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -6px;
+  bottom: -8px;
   width: 0%;
   height: 2px;
+  border-radius: 999px;
   background: #d4af37;
   transition: width 0.3s ease;
 }
 
 .menu-link:hover {
   color: #d4af37;
+  opacity: 1;
 }
 
 .menu-link:hover::after,
@@ -82,35 +86,44 @@
 
 .menu-link.active {
   color: #d4af37;
+  opacity: 1;
 }
 
 .menu-whatsapp {
-  all: unset;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #25d366;
   color: #000;
-  padding: 9px 16px;
-  border-radius: 10px;
+  padding: 11px 18px;
+  border-radius: 12px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
-  transition: 0.3s ease;
   white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-whatsapp:hover {
   background: #1ebe5b;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37, 211, 102, 0.24);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .menu {
-    padding: 12px 18px;
+    padding: 14px 18px;
   }
 
   .menu-container {
     flex-direction: column;
+    justify-content: center;
     gap: 14px;
+  }
+
+  .menu-logo img {
+    height: 68px;
   }
 
   .menu-list {
@@ -118,13 +131,33 @@
     justify-content: center;
     gap: 18px;
   }
+}
 
-  .menu-logo img {
-    height: 80px;
+@media (max-width: 600px) {
+  .menu {
+    padding: 12px 14px;
   }
 
-  .menu-link,
+  .menu-container {
+    gap: 12px;
+  }
+
+  .menu-logo img {
+    height: 58px;
+  }
+
+  .menu-list {
+    gap: 14px;
+  }
+
+  .menu-link {
+    font-size: 14px;
+  }
+
   .menu-whatsapp {
+    width: 100%;
+    max-width: 240px;
+    padding: 12px 16px;
     font-size: 14px;
   }
 }
