@@ -1,20 +1,48 @@
 .sobre-page {
+  position: relative;
   min-height: 100vh;
+  overflow: hidden;
   background:
     radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 30%),
     linear-gradient(180deg, #080808 0%, #0d0d0d 100%);
   color: #ffffff;
-  padding: 72px 20px 96px;
+  padding: 78px 20px 96px;
+}
+
+.sobre-blur {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(110px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.sobre-blur-1 {
+  width: 220px;
+  height: 220px;
+  background: rgba(212, 175, 55, 0.18);
+  top: 40px;
+  left: -80px;
+}
+
+.sobre-blur-2 {
+  width: 260px;
+  height: 260px;
+  background: rgba(212, 175, 55, 0.12);
+  bottom: 40px;
+  right: -100px;
 }
 
 .sobre-container {
+  position: relative;
+  z-index: 2;
   max-width: 1120px;
   margin: 0 auto;
 }
 
 .sobre-hero {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 78px;
 }
 
 .sobre-badge {
@@ -34,9 +62,9 @@
 }
 
 .sobre-hero h1 {
-  font-size: 3.15rem;
-  line-height: 1.15;
-  max-width: 960px;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.08;
+  max-width: 980px;
   margin: 0 auto 20px;
   color: #ffffff;
 }
@@ -53,13 +81,27 @@
   margin-bottom: 56px;
 }
 
-.sobre-content-box {
+.sobre-intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.sobre-content-box,
+.sobre-side-card,
+.sobre-card,
+.sobre-value-item,
+.sobre-cta-box {
   background: linear-gradient(180deg, #121212 0%, #0f0f0f 100%);
   border: 1px solid rgba(212, 175, 55, 0.12);
   border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.sobre-content-box {
   padding: 40px 34px;
   text-align: left;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 .sobre-kicker {
@@ -74,9 +116,10 @@
 
 .sobre-content-box h2,
 .sobre-section-heading h2,
+.sobre-values-heading h2,
 .sobre-cta-box h2 {
-  font-size: 2.35rem;
-  line-height: 1.2;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  line-height: 1.14;
   margin-bottom: 18px;
   color: #ffffff;
 }
@@ -90,6 +133,47 @@
 
 .sobre-content-box p:last-child {
   margin-bottom: 0;
+}
+
+.sobre-side-card {
+  padding: 34px 28px;
+  text-align: left;
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.12), transparent 35%),
+    linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+}
+
+.sobre-side-card h3 {
+  font-size: 1.45rem;
+  line-height: 1.35;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+.sobre-side-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.sobre-side-list li {
+  position: relative;
+  padding-left: 18px;
+  color: #d8d8d8;
+  line-height: 1.7;
+}
+
+.sobre-side-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d4af37;
 }
 
 .sobre-section-heading {
@@ -113,23 +197,36 @@
 }
 
 .sobre-card {
-  background: linear-gradient(180deg, #141414 0%, #101010 100%);
-  border: 1px solid rgba(212, 175, 55, 0.12);
-  border-radius: 22px;
   padding: 30px 24px;
   text-align: left;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sobre-card:hover {
+.sobre-card:hover,
+.sobre-value-item:hover,
+.sobre-side-card:hover {
   transform: translateY(-8px);
   border-color: rgba(212, 175, 55, 0.28);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.24);
+}
+
+.sobre-card-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.12);
+  color: #d4af37;
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 18px;
 }
 
 .sobre-card h3 {
   font-size: 1.45rem;
-  color: #d4af37;
+  color: #ffffff;
   margin-bottom: 12px;
   line-height: 1.3;
 }
@@ -140,17 +237,52 @@
   line-height: 1.75;
 }
 
+.sobre-values-section {
+  margin-bottom: 56px;
+}
+
+.sobre-values-heading {
+  max-width: 860px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.sobre-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sobre-value-item {
+  padding: 28px 24px;
+  text-align: left;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobre-value-item strong {
+  display: block;
+  color: #ffffff;
+  font-size: 1.12rem;
+  margin-bottom: 12px;
+}
+
+.sobre-value-item p {
+  color: #d6d6d6;
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
 .sobre-cta-section {
   margin-top: 18px;
 }
 
 .sobre-cta-box {
-  background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  border-radius: 24px;
-  padding: 42px 28px;
+  padding: 44px 30px;
   text-align: center;
-  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.18);
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.15), transparent 30%),
+    linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
 }
 
 .sobre-cta-box p {
@@ -181,19 +313,26 @@
   transform: translateY(-2px);
 }
 
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
 @media (max-width: 980px) {
+  .sobre-intro-grid,
+  .sobre-grid,
+  .sobre-values-grid {
+    grid-template-columns: 1fr;
+  }
+
   .sobre-hero h1 {
     font-size: 2.6rem;
   }
 
   .sobre-content-box h2,
   .sobre-section-heading h2,
+  .sobre-values-heading h2,
   .sobre-cta-box h2 {
     font-size: 2rem;
-  }
-
-  .sobre-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -213,12 +352,16 @@
   .sobre-hero p,
   .sobre-content-box p,
   .sobre-section-heading p,
-  .sobre-cta-box p {
-    font-size: 0.98rem;
+  .sobre-value-item p,
+  .sobre-cta-box p,
+  .sobre-side-list li {
+    font-size: 0.96rem;
   }
 
   .sobre-content-box,
   .sobre-card,
+  .sobre-side-card,
+  .sobre-value-item,
   .sobre-cta-box {
     border-radius: 18px;
   }
@@ -227,7 +370,9 @@
     padding: 28px 20px;
   }
 
-  .sobre-card {
+  .sobre-side-card,
+  .sobre-card,
+  .sobre-value-item {
     padding: 24px 18px;
   }
 
@@ -237,8 +382,14 @@
 
   .sobre-content-box h2,
   .sobre-section-heading h2,
+  .sobre-values-heading h2,
   .sobre-cta-box h2 {
     font-size: 1.7rem;
+  }
+
+  .sobre-card h3,
+  .sobre-side-card h3 {
+    font-size: 1.2rem;
   }
 
   .sobre-cta-button {
