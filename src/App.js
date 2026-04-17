@@ -457,32 +457,32 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
     {
       title: 'Barbearia Monarch',
       description:
-        'Um site com presença forte, visual premium e estrutura pensada para valorizar a marca e facilitar o agendamento.',
+        'Site profissional criado para barbearias que querem atrair mais clientes e facilitar o agendamento.',
       image: 'barbearia.png',
       alt: 'Site para barbearia',
       link: 'https://barbeariamonarch.netlify.app/',
       tag: 'Barbearia',
-      features: ['Visual premium', 'Foco em marca', 'Agendamento facilitado'],
+      features: ['Presença visual que valoriza o negócio', 'Mais confiança para novos clientes', 'Agendamento direto pelo WhatsApp'],
     },
     {
       title: 'Restaurante Multipage',
       description:
-        'Uma apresentação moderna e estratégica para restaurantes que querem transmitir qualidade e atrair mais clientes.',
+        'Modelo estratégico para restaurantes que querem se destacar online e atrair mais clientes.',
       image: 'restaurante.png',
       alt: 'Site para restaurante',
       link: 'https://restaurantemultipage.netlify.app/',
       tag: 'Restaurante',
-      features: ['Apresentação forte', 'Mais confiança', 'Estrutura estratégica'],
+      features: ['Apresentação profissional do cardápio', 'Mais credibilidade para o cliente', 'Estrutura pensada para gerar contato'],
     },
     {
       title: 'Monarch Store',
       description:
-        'Um modelo de loja com identidade marcante, visual sofisticado e uma estrutura feita para destacar produtos com mais impacto.',
+        'Estrutura avançada para empresas que querem vender online com mais controle e profissionalismo.',
       image: 'loja.png',
       alt: 'Site para loja',
       link: 'https://monarchstore.netlify.app/',
       tag: 'Loja',
-      features: ['Identidade forte', 'Mais impacto visual', 'Produtos em destaque'],
+      features: ['Sistema de vendas integrado', 'Experiência pensada para conversão', 'Mais valor percebido para seus produtos'],
     },
   ];
 
