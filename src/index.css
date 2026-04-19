@@ -1377,3 +1377,48 @@ nav a::before {
     max-width: 500px;
   }
 }
+
+/* HEADER FIXO NO MOBILE */
+.site-header,
+.header,
+.navbar,
+.menu-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* reforço visual ao rolar */
+.site-header.scrolled,
+.header.scrolled,
+.navbar.scrolled,
+.menu-wrapper.scrolled {
+  background: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* no mobile, deixa realmente fixo */
+@media (max-width: 768px) {
+  .site-header,
+  .header,
+  .navbar,
+  .menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(8, 8, 8, 0.9);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+  }
+
+  /* importante: compensar a altura do header */
+  body {
+    padding-top: 74px; /* ajusta conforme altura real do seu menu */
+  }
+}

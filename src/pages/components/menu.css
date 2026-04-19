@@ -1,7 +1,9 @@
 .menu {
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 1100;
+  width: 100%;
   padding: 14px 24px;
   background: rgba(8, 8, 8, 0.78);
   backdrop-filter: blur(16px);
@@ -11,8 +13,13 @@
     background 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
-    padding 0.3s ease;
+    padding 0.3s ease,
+    transform 0.3s ease;
 }
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
 
 .menu-container {
   width: 100%;
@@ -22,6 +29,7 @@
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 24px;
+  transition: gap 0.3s ease;
 }
 
 .menu-logo {
@@ -39,12 +47,19 @@
   width: auto;
   object-fit: contain;
   display: block;
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .menu-logo:hover img {
   transform: translateY(-1px);
 }
+
+/* ========================= */
+/* MENU DESKTOP */
+/* ========================= */
 
 .menu-list {
   list-style: none;
@@ -69,7 +84,10 @@
   font-weight: 600;
   padding: 6px 2px;
   position: relative;
-  transition: color 0.3s ease, opacity 0.3s ease;
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
   white-space: nowrap;
   opacity: 0.92;
 }
@@ -92,6 +110,7 @@
 .menu-list a.active {
   color: #d4af37;
   opacity: 1;
+  transform: translateY(-1px);
 }
 
 .menu-list button:hover::after,
@@ -99,6 +118,10 @@
 .menu-list a.active::after {
   width: 100%;
 }
+
+/* ========================= */
+/* BOTÃO WHATSAPP */
+/* ========================= */
 
 .menu-whatsapp {
   display: inline-flex;
@@ -117,7 +140,8 @@
   transition:
     transform 0.3s ease,
     background 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .menu-whatsapp:hover {
@@ -127,19 +151,35 @@
 }
 
 /* ========================= */
-/* MENU SCROLLED */
+/* SCROLL EFFECT */
 /* ========================= */
 
 body.page-scrolled .menu {
   padding-top: 10px;
   padding-bottom: 10px;
-  background: rgba(8, 8, 8, 0.92);
+  background: rgba(8, 8, 8, 0.94);
   border-bottom-color: rgba(212, 175, 55, 0.14);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.24),
+    0 1px 0 rgba(255, 255, 255, 0.02) inset;
+}
+
+body.page-scrolled .menu-container {
+  gap: 20px;
 }
 
 body.page-scrolled .menu-logo img {
+  height: 50px;
   transform: scale(0.96);
+}
+
+body.page-scrolled .menu-whatsapp {
+  min-height: 42px;
+}
+
+body.page-scrolled .menu-list button,
+body.page-scrolled .menu-list a {
+  opacity: 0.96;
 }
 
 /* ========================= */
@@ -162,13 +202,15 @@ body.page-scrolled .menu-logo img {
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .menu-toggle:hover {
   transform: translateY(-1px);
   border-color: rgba(212, 175, 55, 0.28);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .menu-toggle span {
@@ -180,7 +222,8 @@ body.page-scrolled .menu-logo img {
   transition:
     transform 0.3s ease,
     opacity 0.3s ease,
-    top 0.3s ease;
+    top 0.3s ease,
+    background 0.3s ease;
 }
 
 .menu-toggle span:nth-child(1) {
@@ -193,6 +236,11 @@ body.page-scrolled .menu-logo img {
 
 .menu-toggle span:nth-child(3) {
   top: 31px;
+}
+
+.menu-toggle.open {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(212, 175, 55, 0.28);
 }
 
 .menu-toggle.open span:nth-child(1) {
@@ -223,7 +271,10 @@ body.page-scrolled .menu-logo img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    backdrop-filter 0.35s ease;
 }
 
 .mobile-menu-overlay.active {
@@ -240,19 +291,23 @@ body.page-scrolled .menu-logo img {
   padding: 20px;
   border-radius: 24px;
   background:
-    radial-gradient(circle at top left, rgba(212,175,55,0.08), transparent 30%),
-    linear-gradient(180deg, rgba(16,16,16,0.98), rgba(10,10,10,0.98));
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(16, 16, 16, 0.98), rgba(10, 10, 10, 0.98));
   border: 1px solid rgba(212, 175, 55, 0.14);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transform: translateY(-14px) scale(0.98);
-  transition: transform 0.35s ease;
+  transform: translateY(-18px) scale(0.97);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
 
 .mobile-menu-overlay.active .mobile-menu {
   transform: translateY(0) scale(1);
+  opacity: 1;
 }
 
 .mobile-menu button,
@@ -273,7 +328,8 @@ body.page-scrolled .menu-logo img {
     background 0.28s ease,
     border-color 0.28s ease,
     transform 0.28s ease,
-    color 0.28s ease;
+    color 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .mobile-menu button:hover,
@@ -283,6 +339,7 @@ body.page-scrolled .menu-logo img {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(212, 175, 55, 0.16);
   transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
 }
 
 .mobile-cta {
@@ -320,11 +377,26 @@ body.page-scrolled .menu-logo img {
   .menu-logo img {
     height: 50px;
   }
+
+  body.page-scrolled .menu-logo img {
+    height: 46px;
+  }
 }
 
 @media (max-width: 860px) {
   .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 12px 16px;
+    background: rgba(8, 8, 8, 0.88);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  }
+
+  body {
+    padding-top: 78px;
   }
 
   .menu-container {
@@ -349,6 +421,19 @@ body.page-scrolled .menu-logo img {
   body.page-scrolled .menu {
     padding-top: 10px;
     padding-bottom: 10px;
+    background: rgba(8, 8, 8, 0.95);
+    box-shadow:
+      0 16px 32px rgba(0, 0, 0, 0.26),
+      0 1px 0 rgba(255, 255, 255, 0.02) inset;
+  }
+
+  body.page-scrolled .menu-logo img {
+    height: 46px;
+    transform: scale(0.97);
+  }
+
+  .mobile-menu {
+    top: 82px;
   }
 }
 
@@ -357,12 +442,20 @@ body.page-scrolled .menu-logo img {
     padding: 10px 12px;
   }
 
+  body {
+    padding-top: 72px;
+  }
+
   .menu-container {
     gap: 10px;
   }
 
   .menu-logo img {
     height: 46px;
+  }
+
+  body.page-scrolled .menu-logo img {
+    height: 42px;
   }
 
   .menu-toggle {

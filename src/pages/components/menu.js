@@ -27,14 +27,35 @@ const Menu = () => {
     navigate('/', { state: { scrollTo: section } });
   };
 
-  // trava scroll quando menu abre
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
+    document.body.style.overflow = open ? 'hidden' : 'auto';
+
+    return () => {
       document.body.style.overflow = 'auto';
-    }
+    };
   }, [open]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 12) {
+        document.body.classList.add('page-scrolled');
+      } else {
+        document.body.classList.remove('page-scrolled');
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.body.classList.remove('page-scrolled');
+    };
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
@@ -44,22 +65,24 @@ const Menu = () => {
             type="button"
             className="menu-logo"
             onClick={() => goToSection('home')}
+            aria-label="Ir para o topo"
           >
             <img src={logo} alt="AJ Digital" />
           </button>
 
-          {/* DESKTOP */}
           <ul className="menu-list">
             <li>
-              <button onClick={() => goToSection('home')}>Home</button>
+              <button type="button" onClick={() => goToSection('home')}>
+                Home
+              </button>
             </li>
             <li>
-              <button onClick={() => goToSection('servicos')}>
+              <button type="button" onClick={() => goToSection('servicos')}>
                 Serviços
               </button>
             </li>
             <li>
-              <button onClick={() => goToSection('portfolio')}>
+              <button type="button" onClick={() => goToSection('portfolio')}>
                 Portfólio
               </button>
             </li>
@@ -77,10 +100,12 @@ const Menu = () => {
             Falar no WhatsApp
           </a>
 
-          {/* BOTÃO MOBILE */}
           <button
+            type="button"
             className={`menu-toggle ${open ? 'open' : ''}`}
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen((prev) => !prev)}
+            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={open}
           >
             <span></span>
             <span></span>
@@ -89,14 +114,18 @@ const Menu = () => {
         </div>
       </nav>
 
-      {/* MENU MOBILE */}
-      <div className={`mobile-menu-overlay ${open ? 'active' : ''}`}>
-        <div className="mobile-menu">
-          <button onClick={() => goToSection('home')}>Home</button>
-          <button onClick={() => goToSection('servicos')}>
+      <div
+        className={`mobile-menu-overlay ${open ? 'active' : ''}`}
+        onClick={() => setOpen(false)}
+      >
+        <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+          <button type="button" onClick={() => goToSection('home')}>
+            Home
+          </button>
+          <button type="button" onClick={() => goToSection('servicos')}>
             Serviços
           </button>
-          <button onClick={() => goToSection('portfolio')}>
+          <button type="button" onClick={() => goToSection('portfolio')}>
             Portfólio
           </button>
 
@@ -109,6 +138,7 @@ const Menu = () => {
             target="_blank"
             rel="noreferrer"
             className="mobile-cta"
+            onClick={() => setOpen(false)}
           >
             Falar no WhatsApp
           </a>
