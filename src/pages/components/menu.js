@@ -3,6 +3,9 @@ import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import './menu.css';
 import logo from '../../assets/AJDigital.png';
 
+const WHATSAPP_LINK =
+  'https://wa.me/5548991087702?text=Olá!%20Vi%20o%20site%20da%20AJ%20Digital%20e%20quero%20entender%20como%20funciona%20para%20criar%20um%20site%20profissional%20para%20meu%20negócio.';
+
 const Menu = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,24 +31,20 @@ const Menu = () => {
   };
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : 'auto';
+    document.body.classList.toggle('menu-open', open);
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.classList.remove('menu-open');
     };
   }, [open]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 12) {
-        document.body.classList.add('page-scrolled');
-      } else {
-        document.body.classList.remove('page-scrolled');
-      }
+      document.body.classList.toggle('page-scrolled', window.scrollY > 12);
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -59,13 +58,13 @@ const Menu = () => {
 
   return (
     <>
-      <nav className="menu">
+      <nav className="menu" aria-label="Menu principal">
         <div className="menu-container">
           <button
             type="button"
             className="menu-logo"
             onClick={() => goToSection('home')}
-            aria-label="Ir para o topo"
+            aria-label="Ir para o início"
           >
             <img src={logo} alt="AJ Digital" />
           </button>
@@ -73,26 +72,29 @@ const Menu = () => {
           <ul className="menu-list">
             <li>
               <button type="button" onClick={() => goToSection('home')}>
-                Home
+                Início
               </button>
             </li>
+
+            <li>
+              <button type="button" onClick={() => goToSection('portfolio')}>
+                Modelos
+              </button>
+            </li>
+
             <li>
               <button type="button" onClick={() => goToSection('servicos')}>
                 Serviços
               </button>
             </li>
-            <li>
-              <button type="button" onClick={() => goToSection('portfolio')}>
-                Portfólio
-              </button>
-            </li>
+
             <li>
               <NavLink to="/sobre">Sobre</NavLink>
             </li>
           </ul>
 
           <a
-            href="https://wa.me/5548991087702"
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noreferrer"
             className="menu-whatsapp"
@@ -106,6 +108,7 @@ const Menu = () => {
             onClick={() => setOpen((prev) => !prev)}
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             <span></span>
             <span></span>
@@ -118,30 +121,50 @@ const Menu = () => {
         className={`mobile-menu-overlay ${open ? 'active' : ''}`}
         onClick={() => setOpen(false)}
       >
-        <div className="mobile-menu" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="mobile-menu"
+          id="mobile-menu"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="mobile-menu-head">
+            <span>AJ Digital</span>
+            <small>Presença digital premium</small>
+          </div>
+
           <button type="button" onClick={() => goToSection('home')}>
-            Home
+            <span>01</span>
+            Início
           </button>
-          <button type="button" onClick={() => goToSection('servicos')}>
-            Serviços
-          </button>
+
           <button type="button" onClick={() => goToSection('portfolio')}>
-            Portfólio
+            <span>02</span>
+            Modelos
+          </button>
+
+          <button type="button" onClick={() => goToSection('servicos')}>
+            <span>03</span>
+            Serviços
           </button>
 
           <NavLink to="/sobre" onClick={() => setOpen(false)}>
+            <span>04</span>
             Sobre
           </NavLink>
 
           <a
-            href="https://wa.me/5548991087702"
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noreferrer"
             className="mobile-cta"
             onClick={() => setOpen(false)}
           >
-            Falar no WhatsApp
+            Quero um site profissional
           </a>
+
+          <p className="mobile-menu-note">
+            Sites modernos, responsivos e pensados para gerar mais confiança e
+            contato pelo WhatsApp.
+          </p>
         </div>
       </div>
     </>

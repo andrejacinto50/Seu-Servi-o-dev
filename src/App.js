@@ -13,6 +13,12 @@ import Slider from 'react-slick';
 import Sobre from './pages/Sobre';
 
 /* =========================
+   CONFIG
+========================= */
+const WHATSAPP_LINK =
+  'https://wa.me/5548991087702?text=Olá!%20Vi%20o%20site%20da%20AJ%20Digital%20e%20quero%20entender%20como%20funciona%20para%20criar%20um%20site%20profissional%20para%20meu%20negócio.';
+
+/* =========================
    REVEAL
 ========================= */
 function Reveal({ children, className = '', delay = 0 }) {
@@ -31,6 +37,13 @@ function Reveal({ children, className = '', delay = 0 }) {
    HERO
 ========================= */
 function HeroSection({ homeRef, portfolioRef }) {
+  const scrollToPortfolio = () => {
+    portfolioRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <section className="hero-premium" ref={homeRef} id="home">
       <div className="hero-premium-blur hero-premium-blur-1"></div>
@@ -40,48 +53,42 @@ function HeroSection({ homeRef, portfolioRef }) {
         <div className="hero-premium-left">
           <Reveal>
             <span className="hero-premium-badge">
-              AJ Digital • Sites com posicionamento premium
+              AJ Digital • Sites premium para negócios locais
             </span>
           </Reveal>
 
           <Reveal delay={100}>
             <h1 className="hero-premium-title">
-              Sites profissionais para empresas que querem crescer com mais
-              presença, confiança e autoridade.
+              Seu negócio precisa causar uma primeira impressão forte.
             </h1>
           </Reveal>
 
           <Reveal delay={200}>
             <p className="hero-premium-description">
-              Criamos experiências digitais com visual forte, carregamento
-              rápido e estrutura pensada para transformar visitas em
-              oportunidades reais para sua empresa.
+              Criamos sites profissionais para empresas que querem transmitir
+              mais confiança, valorizar sua marca e transformar visitantes em
+              oportunidades reais pelo WhatsApp.
             </p>
           </Reveal>
 
           <Reveal delay={280}>
             <div className="hero-premium-actions">
-              <button
-                type="button"
-                className="hero-btn hero-btn-primary"
-                onClick={() =>
-                  portfolioRef.current?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                  })
-                }
-              >
-                Ver modelos
-              </button>
-
               <a
-                href="https://wa.me/5548991087702"
+                href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noreferrer"
-                className="hero-btn hero-btn-secondary"
+                className="hero-btn hero-btn-primary"
               >
-                Falar no WhatsApp
+                Quero um site profissional
               </a>
+
+              <button
+                type="button"
+                className="hero-btn hero-btn-secondary"
+                onClick={scrollToPortfolio}
+              >
+                Ver modelos criados
+              </button>
             </div>
           </Reveal>
 
@@ -89,26 +96,26 @@ function HeroSection({ homeRef, portfolioRef }) {
             <div className="hero-premium-stats">
               <div className="hero-premium-stat">
                 <strong>Visual premium</strong>
-                <span>Design que valoriza sua marca logo no primeiro acesso.</span>
+                <span>Design moderno que valoriza sua empresa no primeiro acesso.</span>
               </div>
 
               <div className="hero-premium-stat">
                 <strong>Mais confiança</strong>
-                <span>Uma presença digital que transmite profissionalismo.</span>
+                <span>Uma presença digital mais profissional para seus clientes.</span>
               </div>
 
               <div className="hero-premium-stat">
-                <strong>Mais contato</strong>
-                <span>Estrutura pensada para facilitar conversão e orçamento.</span>
+                <strong>Contato facilitado</strong>
+                <span>Estrutura pensada para levar o cliente direto ao WhatsApp.</span>
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={440}>
             <div className="hero-proof-inline">
-              <div className="hero-proof-pill">Projetos com identidade forte</div>
-              <div className="hero-proof-pill">Experiência pensada para conversão</div>
-              <div className="hero-proof-pill">Sites modernos e responsivos</div>
+              <div className="hero-proof-pill">Site rápido e responsivo</div>
+              <div className="hero-proof-pill">Visual alinhado ao seu negócio</div>
+              <div className="hero-proof-pill">Foco em confiança e conversão</div>
             </div>
           </Reveal>
         </div>
@@ -118,24 +125,21 @@ function HeroSection({ homeRef, portfolioRef }) {
             <div className="hero-visual-grid"></div>
 
             <div className="hero-visual-main">
-              <span className="mini-kicker">Experiência digital</span>
-              <h3>Primeira impressão forte</h3>
+              <span className="mini-kicker">Presença digital</span>
+              <h3>Seu site trabalhando pela sua marca</h3>
               <p>
-                Seu site precisa passar valor em segundos. É isso que ajuda o
-                cliente a enxergar qualidade, confiança e profissionalismo.
+                Uma estrutura profissional ajuda o cliente a entender seu valor,
+                confiar mais no seu negócio e tomar a decisão de chamar você.
               </p>
             </div>
 
             <div className="hero-floating-box hero-floating-box-top">
-              <span>Presença forte</span>
+              <span>Mais autoridade</span>
             </div>
 
             <div className="hero-floating-box hero-floating-box-bottom">
-              <span>Estratégia + visual</span>
+              <span>WhatsApp como conversão</span>
             </div>
-
-
-          
           </div>
         </Reveal>
       </div>
@@ -144,21 +148,21 @@ function HeroSection({ homeRef, portfolioRef }) {
 }
 
 /* =========================
-   AUTHORITY / VALUE
+   AUTHORITY
 ========================= */
 function AuthoritySection() {
   const items = [
     {
       title: 'Primeira impressão forte',
-      text: 'Um site bem apresentado ajuda sua empresa a parecer mais sólida, mais séria e mais preparada para atender.',
+      text: 'Seu cliente decide em poucos segundos se confia ou não na sua empresa. Um site profissional ajuda sua marca a ser levada mais a sério.',
     },
     {
       title: 'Mais valor percebido',
-      text: 'Quando a apresentação da marca sobe de nível, o cliente entende melhor a qualidade do que você oferece.',
+      text: 'Quando sua apresentação digital é forte, o cliente enxerga mais profissionalismo, organização e qualidade no que você oferece.',
     },
     {
-      title: 'Mais chance de contato',
-      text: 'Estrutura clara, visual forte e comunicação bem pensada ajudam a transformar visitas em oportunidades.',
+      title: 'Mais chances de contato',
+      text: 'Com uma estrutura clara, visual atrativo e chamada direta para ação, o site facilita o caminho até o orçamento.',
     },
   ];
 
@@ -168,11 +172,11 @@ function AuthoritySection() {
         <Reveal>
           <div className="section-heading centered-heading">
             <span className="section-kicker">Autoridade</span>
-            <h2>Seu site precisa vender confiança antes mesmo da conversa começar.</h2>
+            <h2>Antes de comprar de você, o cliente precisa confiar em você.</h2>
             <p>
-              Presença digital forte não é só estética. É posicionamento,
-              percepção de valor e uma estrutura que ajuda sua empresa a ser
-              vista como mais profissional.
+              A AJ Digital cria sites com visual forte, comunicação clara e
+              estrutura pensada para aumentar a percepção de valor do seu
+              negócio.
             </p>
           </div>
         </Reveal>
@@ -207,11 +211,10 @@ function PortfolioSection({ portfolioRef, portfolioItems, settings }) {
         <Reveal>
           <div className="section-heading centered-heading">
             <span className="section-kicker">Portfólio</span>
-            <h2>Modelos criados para encantar, posicionar e vender melhor.</h2>
+            <h2>Modelos criados para impressionar no primeiro acesso.</h2>
             <p>
-              Cada projeto é desenvolvido com foco em apresentação
-              profissional, percepção de valor e facilidade de contato com o
-              cliente.
+              Exemplos de estruturas que mostram como um site profissional pode
+              valorizar diferentes tipos de negócios.
             </p>
           </div>
         </Reveal>
@@ -221,11 +224,17 @@ function PortfolioSection({ portfolioRef, portfolioItems, settings }) {
             <Slider {...settings}>
               {portfolioItems.map((item) => (
                 <div key={item.title}>
-                  <a href={item.link} target="_blank" rel="noreferrer">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Abrir modelo ${item.title}`}
+                  >
                     <img
                       src={item.image}
                       alt={item.alt}
                       className="carousel-image premium-carousel-image"
+                      loading="lazy"
                     />
                   </a>
                 </div>
@@ -254,7 +263,7 @@ function PortfolioSection({ portfolioRef, portfolioItems, settings }) {
                   </ul>
 
                   <a href={item.link} target="_blank" rel="noreferrer">
-                    Ver site
+                    Ver modelo
                   </a>
                 </div>
               </div>
@@ -271,9 +280,9 @@ function PortfolioSection({ portfolioRef, portfolioItems, settings }) {
 ========================= */
 function PositioningSection() {
   const items = [
-    'Um site bem construído aumenta a percepção de valor da sua empresa.',
-    'Uma apresentação forte transmite mais confiança logo no primeiro acesso.',
-    'Design, clareza e estrutura certa ajudam a transformar interesse em contato.',
+    'O cliente percebe mais valor quando sua empresa se apresenta com clareza e profissionalismo.',
+    'Um site bem construído passa mais confiança do que depender apenas do Instagram.',
+    'A estrutura certa facilita o contato e transforma interesse em conversa no WhatsApp.',
   ];
 
   return (
@@ -282,12 +291,11 @@ function PositioningSection() {
         <Reveal>
           <div className="positioning-premium-content">
             <span className="section-kicker">Posicionamento</span>
-            <h2>Mais do que um site, uma ferramenta de crescimento.</h2>
+            <h2>Seu site não é só presença online. É percepção de valor.</h2>
             <p>
-              Na AJ Digital, cada projeto é pensado para valorizar a imagem da
-              sua empresa, facilitar o contato com o cliente e criar uma
-              presença digital que transmite mais confiança, profissionalismo e
-              resultado.
+              Mais do que criar páginas bonitas, a AJ Digital constrói uma
+              apresentação estratégica para sua empresa parecer mais forte, mais
+              confiável e mais preparada para receber clientes.
             </p>
           </div>
         </Reveal>
@@ -315,22 +323,22 @@ function ProcessSection() {
     {
       number: '01',
       title: 'Entendimento do negócio',
-      text: 'Analisamos o que sua empresa precisa comunicar, como deve se posicionar e qual tipo de estrutura faz mais sentido.',
+      text: 'Entendemos sua empresa, seu público, seus objetivos e como o site pode ajudar a gerar mais oportunidades.',
     },
     {
       number: '02',
-      title: 'Estrutura e direção visual',
-      text: 'Definimos a base do projeto com foco em clareza, experiência do usuário e uma apresentação mais forte da marca.',
+      title: 'Direção visual e estrutura',
+      text: 'Definimos a base do projeto com foco em clareza, experiência mobile e apresentação profissional.',
     },
     {
       number: '03',
-      title: 'Desenvolvimento e refinamento',
-      text: 'Construímos um site moderno, rápido, responsivo e alinhado com o objetivo comercial da empresa.',
+      title: 'Desenvolvimento premium',
+      text: 'Criamos um site moderno, responsivo, rápido e alinhado com o posicionamento que sua empresa precisa transmitir.',
     },
     {
       number: '04',
-      title: 'Entrega com foco em resultado',
-      text: 'O projeto é finalizado para transmitir profissionalismo, facilitar contato e gerar mais oportunidades reais.',
+      title: 'Entrega e ajustes',
+      text: 'Finalizamos o projeto com foco em qualidade, conversão e facilidade de contato pelo WhatsApp.',
     },
   ];
 
@@ -340,10 +348,10 @@ function ProcessSection() {
         <Reveal>
           <div className="section-heading centered-heading">
             <span className="section-kicker">Processo</span>
-            <h2>Uma estrutura profissional do começo ao fim.</h2>
+            <h2>Um processo claro para transformar ideia em presença profissional.</h2>
             <p>
-              Mais do que design bonito, cada projeto passa por uma construção
-              estratégica para gerar impacto visual, clareza e resultado.
+              Cada etapa é pensada para criar um site bonito, estratégico e
+              pronto para representar melhor o seu negócio.
             </p>
           </div>
         </Reveal>
@@ -378,11 +386,10 @@ function ServicesSection({ servicosRef, services }) {
         <Reveal>
           <div className="section-heading centered-heading">
             <span className="section-kicker">Serviços</span>
-            <h2>O que a AJ Digital pode fazer pelo seu negócio</h2>
+            <h2>Soluções digitais para negócios que querem crescer com mais presença.</h2>
             <p>
-              Soluções digitais criadas para empresas que querem se destacar,
-              vender mais e transmitir um posicionamento mais profissional na
-              internet.
+              Sites profissionais, integração com WhatsApp e estruturas sob
+              medida para empresas que querem se destacar no digital.
             </p>
           </div>
         </Reveal>
@@ -396,6 +403,7 @@ function ServicesSection({ servicosRef, services }) {
                     src={service.icon}
                     alt={service.alt}
                     className="service-icon"
+                    loading="lazy"
                   />
                 </div>
 
@@ -420,25 +428,21 @@ function CTASection() {
         <Reveal>
           <div className="cta-premium-box">
             <div>
-              <span className="section-kicker">Vamos tirar sua ideia do papel</span>
-              <h2>
-                Seu negócio está pronto para ter um site com visual profissional
-                e mais poder de conversão?
-              </h2>
+              <span className="section-kicker">Próximo passo</span>
+              <h2>Quer um site que faça seu negócio parecer mais profissional?</h2>
               <p>
-                Se você quer uma presença digital mais forte, mais valorizada e
-                preparada para impressionar clientes de verdade, esse é o
-                momento de dar o próximo passo.
+                Me chama no WhatsApp e me conta sobre sua empresa. Vou entender
+                seu momento e te orientar sobre a melhor estrutura para começar.
               </p>
             </div>
 
             <a
-              href="https://wa.me/5548991087702"
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noreferrer"
               className="hero-btn hero-btn-primary"
             >
-              Solicitar orçamento
+              Falar sobre meu site
             </a>
           </div>
         </Reveal>
@@ -457,77 +461,87 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
     {
       title: 'Barbearia Monarch',
       description:
-        'Site profissional criado para barbearias que querem atrair mais clientes e facilitar o agendamento.',
+        'Site profissional para barbearias que querem transmitir mais valor, atrair novos clientes e facilitar o agendamento.',
       image: 'barbearia.png',
-      alt: 'Site para barbearia',
+      alt: 'Modelo de site profissional para barbearia',
       link: 'https://barbeariamonarch.netlify.app/',
       tag: 'Barbearia',
-      features: ['Presença visual que valoriza o negócio', 'Mais confiança para novos clientes', 'Agendamento direto pelo WhatsApp'],
+      features: [
+        'Visual premium para valorizar o negócio',
+        'Mais confiança para novos clientes',
+        'Agendamento direto pelo WhatsApp',
+      ],
     },
     {
       title: 'Restaurante Multipage',
       description:
-        'Modelo estratégico para restaurantes que querem se destacar online e atrair mais clientes.',
+        'Modelo estratégico para restaurantes que querem apresentar melhor sua marca, cardápio e experiência.',
       image: 'restaurante.png',
-      alt: 'Site para restaurante',
+      alt: 'Modelo de site profissional para restaurante',
       link: 'https://restaurantemultipage.netlify.app/',
       tag: 'Restaurante',
-      features: ['Apresentação profissional do cardápio', 'Mais credibilidade para o cliente', 'Estrutura pensada para gerar contato'],
+      features: [
+        'Apresentação profissional do cardápio',
+        'Mais credibilidade para o cliente',
+        'Estrutura pensada para gerar contato',
+      ],
     },
     {
       title: 'Monarch Store',
       description:
-        'Estrutura avançada para empresas que querem vender online com mais controle e profissionalismo.',
+        'Estrutura avançada para lojas que querem vender online com mais controle, profissionalismo e percepção de valor.',
       image: 'loja.png',
-      alt: 'Site para loja',
+      alt: 'Modelo de ecommerce profissional para loja',
       link: 'https://monarchstore.netlify.app/',
-      tag: 'Loja',
-      features: ['Sistema de vendas integrado', 'Experiência pensada para conversão', 'Mais valor percebido para seus produtos'],
+      tag: 'E-commerce',
+      features: [
+        'Sistema de vendas integrado',
+        'Experiência pensada para conversão',
+        'Mais valor percebido para seus produtos',
+      ],
     },
   ];
 
   const services = [
     {
       icon: 'iconesite.png',
-      alt: 'Criação de Sites',
+      alt: 'Ícone de criação de sites',
       title: 'Sites Profissionais',
       description:
-        'Projetos modernos, rápidos e responsivos, criados para fortalecer sua presença digital e gerar mais oportunidades.',
+        'Sites modernos, rápidos e responsivos para fortalecer sua marca e gerar mais oportunidades.',
     },
     {
       icon: 'iconesistemas.png',
-      alt: 'Integração com WhatsApp',
-      title: 'Integração com WhatsApp',
+      alt: 'Ícone de integração com WhatsApp',
+      title: 'Conversão pelo WhatsApp',
       description:
-        'Facilite o contato com seus clientes e transforme visitas em conversas diretas pelo WhatsApp da sua empresa.',
+        'Estrutura pensada para facilitar o contato e transformar visitantes em conversas reais com sua empresa.',
     },
     {
       icon: 'iconeconsultoria.png',
-      alt: 'Soluções Personalizadas',
-      title: 'Soluções Sob Medida',
+      alt: 'Ícone de soluções personalizadas',
+      title: 'Estruturas Sob Medida',
       description:
-        'Cada negócio tem sua necessidade. Por isso, desenvolvemos soluções personalizadas para melhorar processos e gerar resultado.',
+        'Cada negócio tem uma necessidade. Criamos soluções alinhadas com seu objetivo, público e posicionamento.',
     },
   ];
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 650,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4500,
+    autoplaySpeed: 4200,
     arrows: true,
+    pauseOnHover: true,
+    pauseOnFocus: true,
     customPaging: () => (
-      <div
-        style={{
-          width: '10px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: '#fff',
-          opacity: 0.8,
-        }}
+      <button
+        type="button"
+        aria-label="Trocar slide"
+        className="custom-slick-dot"
       />
     ),
   };
@@ -575,7 +589,8 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
         });
       },
       {
-        threshold: 0.15,
+        threshold: 0.14,
+        rootMargin: '0px 0px -40px 0px',
       }
     );
 
@@ -597,12 +612,13 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
       />
 
       <a
-        href="https://wa.me/5548991087702"
+        href={WHATSAPP_LINK}
         target="_blank"
         rel="noreferrer"
         className="whatsapp-float"
+        aria-label="Falar com a AJ Digital pelo WhatsApp"
       >
-        WhatsApp
+        Falar no WhatsApp
       </a>
 
       <PositioningSection />
@@ -627,20 +643,20 @@ function AppContent() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 24) {
-        document.body.classList.add('page-scrolled');
-      } else {
-        document.body.classList.remove('page-scrolled');
-      }
+      document.body.classList.toggle('page-scrolled', window.scrollY > 24);
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.body.classList.remove('page-scrolled');
     };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
   return (
@@ -658,6 +674,7 @@ function AppContent() {
             />
           }
         />
+
         <Route path="/sobre" element={<Sobre />} />
       </Routes>
     </>
