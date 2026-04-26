@@ -618,7 +618,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
         className="whatsapp-float"
         aria-label="Falar com a AJ Digital pelo WhatsApp"
       >
-        Falar no WhatsApp
+        Falar no WhatsApp agora
       </a>
 
       <PositioningSection />
