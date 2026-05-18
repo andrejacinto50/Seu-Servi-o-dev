@@ -500,6 +500,22 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
         'Mais valor percebido para seus produtos',
       ],
     },
+    {
+      title: 'Loja Premium',
+      description:
+        'Modelo de loja online para negócios que querem apresentar seus produtos com mais profissionalismo e transformar visitas em conversas pelo WhatsApp.',
+      image: '/lojapremium.png',
+      alt: 'Modelo de loja online com foco em vendas pelo WhatsApp',
+      link: 'https://lojapremium.netlify.app/',
+      tag: 'Loja com foco em WhatsApp',
+      features: [
+        'Visual premium para valorizar os produtos',
+        'Catálogo organizado por categorias',
+        'Produto com descrição, preço e botão direto para WhatsApp',
+        'Experiência rápida e fácil no celular',
+        'Ideal para vender sem precisar de checkout complexo',
+      ],
+    },
   ];
 
   const services = [
