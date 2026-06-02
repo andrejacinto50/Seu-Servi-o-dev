@@ -33,9 +33,6 @@ function Reveal({ children, className = '', delay = 0 }) {
   );
 }
 
-/* =========================
-   HERO
-========================= */
 function HeroSection({ homeRef, portfolioRef }) {
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({
@@ -45,9 +42,12 @@ function HeroSection({ homeRef, portfolioRef }) {
   };
 
   return (
-    <section className="hero-premium" ref={homeRef} id="home">
+    <section className="hero-premium hero-agency" ref={homeRef} id="home">
       <div className="hero-premium-blur hero-premium-blur-1"></div>
       <div className="hero-premium-blur hero-premium-blur-2"></div>
+
+      <div className="hero-orb hero-orb-1"></div>
+      <div className="hero-orb hero-orb-2"></div>
 
       <div className="container hero-premium-grid">
         <div className="hero-premium-left">
@@ -101,44 +101,55 @@ function HeroSection({ homeRef, portfolioRef }) {
 
               <div className="hero-premium-stat">
                 <strong>Mais confiança</strong>
-                <span>Uma presença digital mais profissional para seus clientes.</span>
+                <span>Presença digital profissional para seus clientes.</span>
               </div>
 
               <div className="hero-premium-stat">
                 <strong>Contato facilitado</strong>
-                <span>Estrutura pensada para levar o cliente direto ao WhatsApp.</span>
+                <span>Estrutura pensada para levar direto ao WhatsApp.</span>
               </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={440}>
-            <div className="hero-proof-inline">
-              <div className="hero-proof-pill">Site rápido e responsivo</div>
-              <div className="hero-proof-pill">Visual alinhado ao seu negócio</div>
-              <div className="hero-proof-pill">Foco em confiança e conversão</div>
             </div>
           </Reveal>
         </div>
 
         <Reveal className="hero-premium-right" delay={240}>
-          <div className="hero-visual-card">
-            <div className="hero-visual-grid"></div>
+          <div className="agency-showcase">
+            <div className="agency-screen">
+              <div className="agency-screen-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
 
-            <div className="hero-visual-main">
-              <span className="mini-kicker">Presença digital</span>
-              <h3>Seu site trabalhando pela sua marca</h3>
-              <p>
-                Uma estrutura profissional ajuda o cliente a entender seu valor,
-                confiar mais no seu negócio e tomar a decisão de chamar você.
-              </p>
+              <div className="agency-screen-content">
+                <span className="screen-kicker">Projeto premium</span>
+                <h3>Site profissional focado em presença e conversão.</h3>
+
+                <div className="screen-line line-1"></div>
+                <div className="screen-line line-2"></div>
+                <div className="screen-line line-3"></div>
+
+                <div className="screen-card-row">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
             </div>
 
-            <div className="hero-floating-box hero-floating-box-top">
-              <span>Mais autoridade</span>
+            <div className="agency-metric metric-top">
+              <strong>+ Valor</strong>
+              <span>Percepção profissional</span>
             </div>
 
-            <div className="hero-floating-box hero-floating-box-bottom">
-              <span>WhatsApp como conversão</span>
+            <div className="agency-metric metric-middle">
+              <strong>Mobile First</strong>
+              <span>Experiência no celular</span>
+            </div>
+
+            <div className="agency-metric metric-bottom">
+              <strong>WhatsApp</strong>
+              <span>Contato direto</span>
             </div>
           </div>
         </Reveal>

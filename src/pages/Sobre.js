@@ -11,33 +11,69 @@ const Sobre = () => {
       <div className="sobre-blur sobre-blur-2"></div>
 
       <div className="sobre-container">
-        <section className="sobre-hero">
-          <span className="sobre-badge">AJ Digital • Presença premium</span>
+        <section className="sobre-hero sobre-hero-agency">
+  <div className="sobre-hero-copy">
+    <span className="sobre-badge">AJ Digital • Presença premium</span>
 
-          <h1>
-            Sites profissionais para empresas que querem parecer mais fortes,
-            confiáveis e preparadas para vender.
-          </h1>
+    <h1>
+      Sites profissionais para empresas que querem parecer mais fortes,
+      confiáveis e preparadas para vender.
+    </h1>
 
-          <p>
-            A AJ Digital cria experiências digitais modernas, rápidas e
-            estratégicas para valorizar marcas, gerar mais confiança e facilitar
-            o contato com novos clientes.
-          </p>
+    <p>
+      A AJ Digital cria experiências digitais modernas, rápidas e estratégicas
+      para valorizar marcas, gerar mais confiança e facilitar o contato com
+      novos clientes.
+    </p>
 
-          <div className="sobre-hero-actions">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="sobre-cta-button"
-            >
-              Quero um site profissional
-            </a>
+    <div className="sobre-hero-actions">
+      <a
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noreferrer"
+        className="sobre-cta-button"
+      >
+        Quero um site profissional
+      </a>
 
-            <span>Atendimento direto pelo WhatsApp</span>
-          </div>
-        </section>
+      <span>Atendimento direto pelo WhatsApp</span>
+    </div>
+  </div>
+
+  <div className="sobre-hero-visual" aria-hidden="true">
+    <div className="sobre-agency-card">
+      <span className="sobre-mini-kicker">AJ Digital</span>
+      <h3>Presença digital que aumenta percepção de valor.</h3>
+
+      <div className="sobre-agency-lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div className="sobre-agency-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div className="sobre-floating-metric metric-one">
+      <strong>Mobile First</strong>
+      <span>Experiência no celular</span>
+    </div>
+
+    <div className="sobre-floating-metric metric-two">
+      <strong>+ Confiança</strong>
+      <span>Marca mais profissional</span>
+    </div>
+
+    <div className="sobre-floating-metric metric-three">
+      <strong>WhatsApp</strong>
+      <span>Contato mais direto</span>
+    </div>
+  </div>
+</section>
 
         <section className="sobre-section">
           <div className="sobre-intro-grid">
