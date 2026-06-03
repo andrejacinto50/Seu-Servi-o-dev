@@ -483,6 +483,8 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
         'Agendamento direto pelo WhatsApp',
       ],
     },
+
+  
     {
       title: 'Restaurante Multipage',
       description:
@@ -527,6 +529,35 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
         'Ideal para vender sem precisar de checkout complexo',
       ],
     },
+      {
+  title: 'Academia Premium',
+  description:
+    'Site premium para academias que querem transmitir mais força, profissionalismo e gerar contatos pelo WhatsApp.',
+  image: '/academia.png',
+  alt: 'Modelo de site premium para academia',
+  link: 'https://academiapremium.netlify.app/',
+  tag: 'Academia',
+  features: [
+    'Visual forte para valorizar a academia',
+    'Experiência premium no celular',
+    'Contato direto pelo WhatsApp',
+  ],
+},
+
+{
+  title: 'Barbearia Premium',
+  description:
+    'Site multipágina premium para barbearias que querem transmitir mais valor, fortalecer a presença digital e facilitar o agendamento pelo WhatsApp.',
+  image: '/barbeariapremium.png',
+  alt: 'Modelo de site multipágina premium para barbearia',
+  link: 'https://barbeariapremium.netlify.app/',
+  tag: 'Barbearia',
+features: [
+  'Visual cinematográfico que transmite luxo, presença e alto padrão',
+  'Estrutura multipágina com serviços, equipe, galeria, avaliações e blog',
+  'Experiência premium com foco em autoridade, confiança e agendamentos',
+],
+},
   ];
 
   const services = [
