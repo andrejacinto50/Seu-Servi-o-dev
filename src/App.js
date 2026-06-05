@@ -550,7 +550,7 @@ function Home({ homeRef, servicosRef, portfolioRef }) {
     'Site multipágina premium para barbearias que querem transmitir mais valor, fortalecer a presença digital e facilitar o agendamento pelo WhatsApp.',
   image: '/barbeariapremium.png',
   alt: 'Modelo de site multipágina premium para barbearia',
-  link: 'https://barbeariapremium.netlify.app/',
+  link: 'https://barbeariapremiummultipagina.netlify.app/',
   tag: 'Barbearia',
 features: [
   'Visual cinematográfico que transmite luxo, presença e alto padrão',
